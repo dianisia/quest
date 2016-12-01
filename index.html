@@ -1,0 +1,33 @@
+﻿<html>
+<head>
+    <title>Квесты</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.9.0/lodash.js"></script>
+
+</head>
+<body>
+
+<script type="text/template" id="question-template">
+    <h2>Вопрос:</h2>
+    <p style='width:300px'><%-question%></p>
+</script>
+
+<div id='question'>
+</div>
+
+<script>
+var str = document.querySelector("#question-template").textContent;
+var compiled = _.template(str, {question: 'Вопрос: Что? Где? Когда?'});
+document.querySelector('#question').innerHTML = compiled;
+</script>
+
+<div id="answer"><h2>Ответ:</h2><br>
+    <form name="forma12">
+        <input type="text" name="mail"><br><br>
+        <input type="button" value="Ответить" onclick="prov_adress(forma12)">
+    </form>
+</div>
+</body>
+</html> 
